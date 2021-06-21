@@ -14,12 +14,8 @@ public class ThreeEgl {
     contexts[key] = context;
   }
   
-  public static func getContext(key: Int64) -> EAGLContext {
-    
-    print(contexts);
-    print(key);
-    
-    return contexts[key]!;
+  public static func getContext(key: Int64) -> EAGLContext? {
+    return contexts[key] ?? nil;
   }
   
   public static func remove(key: Int64) {
