@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name         = 'three3d_egl'
-    spec.version      = '0.1.2'
+    spec.version      = '0.1.3'
     spec.authors      = { 
       'wasabia' => 'themorecolor@gmail.com'
     }
