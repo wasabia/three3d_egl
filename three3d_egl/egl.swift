@@ -8,7 +8,7 @@
 import OpenGLES.EAGL
 
 public class ThreeEgl {
-  static var contexts: [Int64: EAGLContext] = [:];
+  public static var contexts: [Int64: EAGLContext] = [:];
 
   public static func setContext(key: Int64, context: EAGLContext) {
     contexts[key] = context;
@@ -30,12 +30,14 @@ public class ThreeEgl {
 
 @_cdecl("makeCurrent")
 public func makeCurrent(context: Int64) -> Int64 {
-  
   let _context = ThreeEgl.getContext(key: context);
   
-  EAGLContext.setCurrent(_context);
-  
-  return context;
+  if(_context != nil) {
+    var _result = EAGLContext.setCurrent(_context);
+    return _result ? 1 : 0;
+  } else {
+    return -1;
+  }
 }
 
 @_cdecl("testEgl")
