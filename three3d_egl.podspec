@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name         = 'three3d_egl'
-    spec.version      = '0.1.3'
+    spec.version      = '0.1.4'
     spec.authors      = { 
       'wasabia' => 'themorecolor@gmail.com'
     }
@@ -18,4 +18,5 @@ Pod::Spec.new do |spec|
     spec.source_files = '**/*.swift', '*.swift'
     spec.swift_versions = '5.0'
     spec.ios.deployment_target = '9.0'
+    spec.osx.deployment_target = "10.10"
   end
